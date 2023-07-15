@@ -1,0 +1,51 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+ table {
+    border-collapse: collapse;
+}
+
+th,td {
+    border: 2px solid rgb(231, 231, 231);
+    padding: 10px;
+}
+
+td:first-child{
+    width: 340px;
+} 
+
+button{
+    width: 170px;
+    height: 35px;
+    border: none;
+    outline: none;
+    font-size: medium;
+}
+
+.no-border{
+    border: none;
+}
+tr {
+    text-align: center;
+    vertical-align: middle;
+}
+.to-left{
+    text-align: left;
+}
+
+.sizing-fonts{
+    font-weight: bold;
+    font-size: x-large;
+}
+.basico{
+    background-color: #7ebff2;
+    color: white;
+}
+.padrao{
+    background-color: #4a87ec;
+    color: white;
+}
+.avancado{
+    background-color: #7073ec;
+    color: white;
+}
