@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Cadastro</legend>
+          <div class="form-input">
+            <label for="name">Nome</label>
+            <input id="name" type="text" placeholder="Digite seu nome" name="nome" />
+          </div>
+          <div class="form-input">
+            <label for="tel">Telefone</label>
+            <input
+              id="tel"
+              type="number"
+              placeholder="Digite seu telefone"
+              name="telefone"
+            />
+          </div>
+          <div class="form-input">
+            <label for="data">Data de nascimento</label>
+            <input
+              id="data"
+              type="date"
+              placeholder="data de nascimento"
+              name="data_nascimento"
+            />
+          </div>
+          <div class="form-input">
+            <label for="age">Idade</label>
+            <input id="age" type="number" placeholder="Digite sua idade" name="idade" />
+          </div>
+
+          <div class="form-input">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="Digite seu e-mail" name="email" />
+          </div>
+
+          <div class="form-input">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Digite sua senha"
+              name="senha"
+            />
+          </div>
+          <label class="labelCheckbox">
+            <input type="checkbox" name="checkbox" value="checkbox" />
+            Concordo com as termos.
+          </label>
+
+          <button>Enviar</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
