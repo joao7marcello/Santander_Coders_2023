@@ -1,0 +1,44 @@
+.title {
+  padding: 15px;
+  padding-bottom: 10px;
+}
+.subtitle {
+  padding: 15px;
+  padding-top: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; /* Vertically align items at the top */
+  max-width: 100%;
+  padding-left: 10px; /* Set a maximum width for the container if desired */
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #ccc; /* Add a border at the bottom of each container */
+}
+
+.left-image {
+  width: 120px;
+  height: 100px;
+  margin-right: 20px; /* Add some space between the image and the content */
+}
+
+.content {
+  display: flex; /* Add this line to establish a flex container for the name and description */
+  flex-direction: row; /* Display the name and description side by side */
+  align-items: flex-start; /* Align the name and description at the top */
+  flex: 1; /* The content takes the remaining available width */
+}
+
+.product-name {
+  margin-top: 10px;
+  margin-bottom: 10px; /* Optional: add margin to separate name and description */
+}
+.product-description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.title-catalogo {
+  padding: 10px;
+}

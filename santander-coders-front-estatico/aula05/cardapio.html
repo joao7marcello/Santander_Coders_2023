@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      main {
+        margin-top: 83px;
+      }
+      header {
+        top: 0px;
+        width: 100%;
+        position: fixed;
+        background-color: #4caf50;
+        text-align: center;
+        color: white;
+        z-index: 1;
+      }
+
+      nav {
+        background-color: #ddd;
+        padding: 10px;
+        z-index: 1;
+      }
+      a:hover {
+        background-color: #f1f1f1;
+      }
+
+      a {
+        padding: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-decoration: none;
+        color: #333;
+      }
+      .app-borders {
+        position: relative;
+        width: 60%;
+        margin: 20px auto;
+        border: 1px solid grey;
+        margin-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 0px;
+      }
+      figcaption {
+        display: none;
+      }
+     .arrumando-nav{
+      padding: 30px;
+     }
+     
+      footer {
+        background-color: #4caf50;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      html {
+        scroll-padding-top: 150px;
+        scroll-behavior: smooth;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="catalogo.css" />
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <link rel="stylesheet" type="text/css" href="cadastro.css" />
+
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Cardápio/Catálogo Digital</h1>
+      <h4 class="subtitle">Confira nossos produtos deliciosos</h4>
+      <nav>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#tabela">Tabela de Preços</a>
+        <a href="#cadastro">Cadastro</a>
+      </nav>
+    </header>
+    <main>
+      <p class="arrumando-nav"></p>
+      <fieldset class="app-borders">
+        <div id="catalogo">
+          <h2 class="title-catalogo">Cardápio/Catálogo</h2>
+
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 1</h2>
+                <h3>Descrição do Produto 1.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 2</h2>
+                <h3>Descrição do Produto 2.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 3</h2>
+                <h3>Descrição do Produto 3.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 4</h2>
+                <h3>Descrição do Produto 4.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 5</h2>
+                <h3>Descrição do Produto 5.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 6</h2>
+                <h3>Descrição do Produto 6.</h3>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="./assets/pizza.jpeg" alt="Image" class="left-image" />
+            <div class="content">
+              <div class="text-content">
+                <h2 class="product-name">Produto 7</h2>
+                <h3>Descrição do Produto 7.</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tabela">
+          <h2 class="title-table">Tabela de Preços</h2>
+          <table>
+            <tr>
+              <th>Produto</th>
+              <th>Preço</th>
+            </tr>
+            <tr>
+              <td>Produto 1</td>
+              <td>R$ 10,00</td>
+            </tr>
+            <tr>
+              <td>Produto 2</td>
+              <td>R$ 15,00</td>
+            </tr>
+          </table>
+        </div>
+        <div id="cadastro">
+          <h2 class="title-cadastro">Formulário de Cadastro</h2>
+          <form>
+            <fieldset>
+              <div class="form-input">
+                <label for="name">Nome:</label>
+                <input id="name" type="text" placeholder="Digite seu nome" name="nome" />
+              </div>
+              <div class="form-input">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" placeholder="Digite seu e-mail" name="email" />
+              </div>
+              <div class="form-input">
+                <label for="tel">Telefone:</label>
+                <input
+                  id="tel"
+                  type="tel"
+                  placeholder="Digite seu telefone"
+                  name="telefone"
+                />
+              </div>
+              <div class="form-input">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" type="text" size="20" placeholder="Digite sua mensagem" name="mensagem"></textarea>
+              </div>
+              <button class="button-config">Enviar</button>
+        </div>
+      </fieldset>
+    </main>
+    <footer>
+      <p>© 2023 Cardápio/Catálogo Digital. Todos os direitos reservados</p>
+    </footer>
+  </body>
+</html>
