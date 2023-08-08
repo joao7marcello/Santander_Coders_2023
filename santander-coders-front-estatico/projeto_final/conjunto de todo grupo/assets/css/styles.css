@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.font-title {
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+}
+
+.bg-main {
+    background-color: #222831;
+}
+
+.btn-hover:hover {
+    background-color: #e69c00;
+    border-color: #e69c00;
+}
+
+.link-hover:hover {
+    color: #ffbe33 !important;
+}
+
+/* Start Header */
+nav li a.active {
+    color: #ffbe33 !important;
+}
+
+nav .font-title {
+    font-size: 2rem;
+}
+
+.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* End Header */
+
+/* Start Off Section */
+.off-img img {
+    height: 175px;
+    width: 175px;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+.off-img:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* End Off Section */
+
+/* Start Our Menu */
+.link-selected {
+    background-color: #222831;
+    color: white !important;
+}
+
+/* Efeito zoom das imagens */
+.imagem {
+    overflow: hidden;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+.imagem:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Fim do efeito zoom */
+
+/* Links */
+.marginNavLink {
+    color: #212529;
+    padding: 10px 30px;
+}
+
+.menu .nav-link:hover {
+    background: none;
+}
+
+.menu .nav-link:focus {
+    color: #fff;
+    background: #212529;
+}
+/* Fim do links */
+
+.widhtHeigth {
+    width: 310px;
+    height: 450px;
+}
+
+.bg-light {
+    height: 180px;
+    border-radius: 4px 4px 0 45px;
+}
+/* End Our Menu */
+
+/* Start About */
+section.about img {
+    max-width: 100%;
+    width: 27.5rem;
+}
+/* End About */
+
+/* Start Customers */
+.img-customers img {
+    height: 7rem;
+    width: 7rem;
+}
+/* End Customers */
+
+/* Start Footer */
+.social-links a {
+    width: 30px;
+    height: 30px;
+}
+
+/* End Footer */
