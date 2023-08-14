@@ -3,6 +3,20 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-for (let index = 0; index < 6; index++) {
-  console.log(getRandomIntInclusive(1, 60));
+function hasDuplicates(array) {
+  return new Set(array).size !== array.length;
 }
+let ordenados;
+
+do {
+  let numSorteados = [];
+
+  for (let index = 0; index < 6; index++) {
+    let sorteio = getRandomIntInclusive(1, 60);
+    numSorteados.push(sorteio);
+  }
+
+  ordenados = numSorteados.sort((a, b) => a - b);
+} while (hasDuplicates(ordenados));
+
+console.log(ordenados);
