@@ -10,16 +10,8 @@ function addTarefa(tarefaString) {
   contadorID++;
   tarefas.push(tarefa);
 }
-
-addTarefa("Tarefa 001");
-addTarefa("Tarefa 002");
-addTarefa("Tarefa 003");
-
-console.log(tarefas);
-// Listar todas as tarefas
-for (let tarefa of tarefas) {
-  console.log(tarefa.tarefaString);
-}
+addTarefa("tarefa 001");
+addTarefa("tarefa 002");
 
 // Obtendo tarefa por ID
 function exibirPorID(id) {
@@ -44,13 +36,6 @@ function removerPorID(id) {
     console.log(`Tareda ID ${id} não encontrada.`);
   }
 }
-removerPorID(1);
-
-for (let tarefa of tarefas) {
-  console.log(tarefa.tarefaString);
-}
-addTarefa("Tarefa 004");
-console.log(tarefas);
 
 function editarPorID(id, tarefaEditada) {
   let tarefa = tarefas.find((tarefa) => tarefa.id === id);
@@ -63,23 +48,22 @@ function editarPorID(id, tarefaEditada) {
   }
 }
 
-editarPorID(2, "Editada 002");
-editarPorID(1, "Editada 001");
-for (let tarefa of tarefas) {
-  console.log(tarefa.tarefaString);
-}
-
 function done(id) {
   let tarefa = tarefas.find((tarefa) => tarefa.id === id);
   if (tarefa) {
     tarefa.statusBool = true;
     console.log(`Tarefa ID ${id} marcada como concluída.`);
   } else {
-    console.log(`Tarefa ID ${id}não encontrada.`);
+    console.log(`Tarefa ID ${id} não encontrada.`);
   }
 }
-done(2);
-for (let tarefa of tarefas) {
-  let status = tarefa.statusBool ? " - Realizada" : "";
-  console.log(`ID: ${tarefa.id}; Tarefa: ${tarefa.tarefaString}${status}`);
+
+function listAll() {
+  for (let tarefa of tarefas) {
+    let status = tarefa.statusBool ? " - Concluída ✓" : "";
+    console.log(`ID: ${tarefa.id}; Tarefa: ${tarefa.tarefaString}${status}`);
+  }
 }
+listAll();
+done(2);
+listAll();
