@@ -1,3 +1,4 @@
+// Final Project by Erivaldo Silva, Iza Machado, João Marcello, Kadidja Lima and Pedro Kassardjian.
 let tarefas = [];
 let contadorID = 1;
 
@@ -10,8 +11,6 @@ function addTarefa(tarefaString) {
   contadorID++;
   tarefas.push(tarefa);
 }
-addTarefa("tarefa 001");
-addTarefa("tarefa 002");
 
 // Obtendo tarefa por ID
 function exibirPorID(id) {
@@ -26,17 +25,19 @@ function exibirPorID(id) {
   }
 }
 
+// Removendo tarefa por ID
 function removerPorID(id) {
-  let indiceTarefa = tarefas.findIndex((tarefa) => tarefas.id !== id);
+  let tarefaRemovida = tarefas.find((tarefa) => tarefa.id === id);
 
-  if (indiceTarefa !== 1) {
-    tarefas.splice(indiceTarefa, 1);
+  if (tarefaRemovida) {
+    tarefas = tarefas.filter((tarefa) => tarefa.id !== id);
     console.log(`Tarefa ID ${id} removida.`);
   } else {
-    console.log(`Tareda ID ${id} não encontrada.`);
+    console.log(`Tarefa ID ${id} não encontrada.`);
   }
 }
 
+// Editando tarefa
 function editarPorID(id, tarefaEditada) {
   let tarefa = tarefas.find((tarefa) => tarefa.id === id);
 
@@ -48,6 +49,7 @@ function editarPorID(id, tarefaEditada) {
   }
 }
 
+// Marcando como concluída
 function done(id) {
   let tarefa = tarefas.find((tarefa) => tarefa.id === id);
   if (tarefa) {
@@ -64,6 +66,23 @@ function listAll() {
     console.log(`ID: ${tarefa.id}; Tarefa: ${tarefa.tarefaString}${status}`);
   }
 }
+
+function facilitarView() {
+  console.log("----------------------------");
+}
+
+addTarefa("Tarefa 001");
+addTarefa("Tarefa 002");
+addTarefa("Tarefa 003");
+addTarefa("Tarefa 004");
 listAll();
-done(2);
+facilitarView();
+exibirPorID(2);
+facilitarView();
+removerPorID(3);
+facilitarView();
+editarPorID(4, "Tarefa 4 editada");
+facilitarView();
+done(1);
+facilitarView();
 listAll();
