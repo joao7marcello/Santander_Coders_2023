@@ -233,7 +233,7 @@ function updateProductList() {
           alert(
             "Please fill in all required fields before updating the product."
           );
-          return; // Exit the function without updating the product
+          return;
         }
 
         // Find the product to update by ID
@@ -274,13 +274,10 @@ function updateProductList() {
         );
 
         if (confirmation) {
-          // Remove the product from the array
           products.splice(productIndex, 1);
 
-          // Update the product list display
           updateProductList();
 
-          // Show a notification
           alert(`Product "${product.name}" has been deleted.`);
         }
       }
@@ -292,7 +289,6 @@ function updateProductList() {
     productCard.appendChild(productImage);
     productCard.appendChild(cardBody);
 
-    // Append buttonsDiv to productCard
     productCard.appendChild(buttonsDiv);
 
     productDiv.appendChild(productCard);
@@ -300,7 +296,7 @@ function updateProductList() {
   });
 }
 
-// Populate size options based on the selected type
+// Populate size options
 function populateSizeOptions(selectedType) {
   const productSizeSelect = document.getElementById("productSize");
   productSizeSelect.innerHTML = "";
@@ -318,5 +314,5 @@ function populateSizeOptions(selectedType) {
   });
 }
 
-// Initialize size options based on the default selected type
+// Initialize size options
 populateSizeOptions(productTypeSelect.value);
