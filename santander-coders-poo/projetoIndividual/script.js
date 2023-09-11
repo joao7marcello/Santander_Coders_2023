@@ -119,18 +119,17 @@ function updateProductList() {
 
   products.forEach((product) => {
     const productDiv = document.createElement("div");
-    productDiv.classList.add("col-md-6"); // Use Bootstrap's grid system (3 products per row)
-    productDiv.classList.add("mb-4"); // Use Bootstrap's grid system (3 products per row)
+    productDiv.classList.add("col-md-6");
+    productDiv.classList.add("mb-4");
 
-    // Use Bootstrap card component for each product
     const productCard = document.createElement("div");
     productCard.classList.add("card");
-    productCard.classList.add("h-100"); // Make sure all cards have the same height
+    productCard.classList.add("h-100");
 
     const productImage = document.createElement("img");
     productImage.src = product.image;
     productImage.alt = product.name;
-    productImage.classList.add("card-img-top"); // Set the image as the card's top content
+    productImage.classList.add("card-img-top");
 
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
@@ -150,7 +149,6 @@ function updateProductList() {
     const sizesDiv = document.createElement("div");
     sizesDiv.classList.add("card-text");
 
-    // Iterate through sizes and display them using Bootstrap badges
     for (const size in product._pricesBySize) {
       const sizeBadge = document.createElement("span");
       sizeBadge.classList.add("badge", "bg-primary", "mr-2");
@@ -181,24 +179,18 @@ function updateProductList() {
     deleteButton.textContent = "Delete";
 
     function resetFormAndRestoreEvent() {
-      // Reset the form
       productForm.reset();
 
-      // Get a reference to the "Add Product" button
       const addProductButton = document.getElementById("addProduct");
 
-      // Restore the button text to "Add Product"
       addProductButton.textContent = "Add Product";
 
-      // Remove the update event listener to avoid duplicates
       addProductButton.removeEventListener("click", updateProduct);
 
-      // Reattach the "Add Product" event listener
       addProductButton.addEventListener("click", addProduct);
     }
 
     editButton.addEventListener("click", () => {
-      // Fill the form fields with the original product's information
       document.getElementById("productName").value = product.name;
       document.getElementById("productPrice").value =
         product.getPriceBySize(productSize);
@@ -209,20 +201,15 @@ function updateProductList() {
       document.getElementById("quantity").value =
         product.getQuantityBySize(productSize);
 
-      // Get a reference to the "Update Product" button
       const addProductButton = document.getElementById("addProduct");
 
-      // Store the product being edited so we can update it later
       addProductButton.dataset.productId = product.id;
 
-      // Update the button text to "Update Product"
       addProductButton.textContent = "Update Product";
 
-      // Attach an event listener to the "Update Product" button
       addProductButton.removeEventListener("click", addProduct);
 
       addProductButton.addEventListener("click", () => {
-        // Get the updated values from the form
         const updatedName = document.getElementById("productName").value;
         const updatedPrice = parseFloat(
           document.getElementById("productPrice").value
@@ -235,7 +222,6 @@ function updateProductList() {
           document.getElementById("quantity").value
         );
 
-        // Check for empty fields and handle them
         if (
           !updatedName ||
           !updatedPrice ||
@@ -250,14 +236,14 @@ function updateProductList() {
           return; // Exit the function without updating the product
         }
 
-        // Find the product to update by its ID
+        // Find the product to update by ID
         const productId = addProductButton.dataset.productId;
         const productToUpdate = products.find((p) => p.id === productId);
 
         if (!productToUpdate) {
           alert(`Product "${updatedName}" has been updated.`);
           resetFormAndRestoreEvent(); // Reset the form and return to "Add Product" mode
-          return; // Exit the function if the product is not found
+          return;
         }
 
         // Update the product with the new information
@@ -268,12 +254,8 @@ function updateProductList() {
         productToUpdate.setType(updatedType);
         productToUpdate.setQuantityBySize(updatedSize, updatedQuantity);
 
-        // Handle any other update logic here
-
-        // Show a notification
         alert(`Product "${updatedName}" has been updated.`);
 
-        // Reset the form and return to "Add Product" mode
         resetFormAndRestoreEvent();
       });
     });
@@ -288,7 +270,7 @@ function updateProductList() {
       if (productIndex !== -1) {
         // Show a confirmation notification
         const confirmation = window.confirm(
-          `Are you sure you want to delete the product "${deletedProductId}"?`
+          `Are you sure you want to delete the product "${product.name}"?`
         );
 
         if (confirmation) {
