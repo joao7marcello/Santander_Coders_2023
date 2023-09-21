@@ -1,6 +1,7 @@
 let valor01 = 0;
 let valor02 = 0;
 let operacao = "";
+let resultado = 0;
 
 function calcular() {
   const inputValor01 = parseFloat(document.getElementById("valor01").value);
@@ -16,30 +17,39 @@ function calcular() {
 
   switch (operacao) {
     case "+":
-      document.getElementById("resultado").textContent =
-        "Resultado: " + (valor01 + valor02);
+      resultado = valor01 + valor02;
       break;
     case "-":
-      document.getElementById("resultado").textContent =
-        "Resultado: " + (valor01 - valor02);
+      resultado = valor01 - valor02;
       break;
     case "*":
-      document.getElementById("resultado").textContent =
-        "Resultado: " + valor01 * valor02;
+      resultado = valor01 * valor02;
       break;
     case "/":
       if (valor02 === 0) {
         document.getElementById("resultado").textContent =
           "Erro: Divisão por zero";
+        return;
       } else {
-        document.getElementById("resultado").textContent =
-          "Resultado: " + valor01 / valor02;
+        resultado = valor01 / valor02;
       }
       break;
     default:
       document.getElementById("resultado").textContent =
         "Selecione uma operação";
+      return;
   }
+
+  const resultadoSpan = document.getElementById("resultado");
+  resultadoSpan.style.color = "white";
+
+  if (resultado > 20) {
+    resultadoSpan.style.backgroundColor = "green";
+  } else {
+    resultadoSpan.style.backgroundColor = "orange";
+  }
+
+  resultadoSpan.textContent = "Resultado: " + resultado;
 }
 
 function selecionarOperacao(operacaoSelecionada) {
