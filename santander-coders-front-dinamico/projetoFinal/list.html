@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Travel List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Travel List</h1>
+      <a href="index.html">Add country to the list</a>
+      <ul id="travelList">
+        <!-- Listagem -->
+      </ul>
+    </div>
+    <div id="editForm" style="display: none">
+      <h2>Edit Travel Entry</h2>
+      <form id="editTravelForm" onsubmit="saveEditedEntry(event)">
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required />
+
+        <label for="arrivalDate">Arrival Date:</label>
+        <input type="date" id="arrivalDate" name="arrivalDate" required />
+
+        <label for="departureDate">Departure Date:</label>
+        <input type="date" id="departureDate" name="departureDate" required />
+        
+        <label for="money">Money Spent:</label>
+        <input type="number" id="money" name="money" step="1" required />
+
+        <label for="currency">Currency:</label>
+        <select id="currency" name="currency">
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+          <option value="BRL">BRL</option>
+        </select>
+
+        <label for="rating">Rating (1-10):</label>
+        <input
+          type="number"
+          id="rating"
+          name="rating"
+          min="1"
+          max="10"
+          required
+        />
+        
+        <label for="cities">Cities:</label>
+    <div id="citiesContainer">
+      <!-- Input Cidades -->
+    </div>
+        
+        <button type="submit">Save</button>
+        <button type="button" onclick="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+    <div id="cityForm" style="display: none">
+        <h2>Add Cities Visited</h2>
+        <form id="addCityForm">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required />
+            <button type="submit">Add</button>
+            <button type="button" onclick="cancelAddCity()">Cancel</button>
+        </form>
+    </div>
+    
+
+    <script src="list_edit_delete.js">
+      
+    </script>
+  </body>
+</html>
