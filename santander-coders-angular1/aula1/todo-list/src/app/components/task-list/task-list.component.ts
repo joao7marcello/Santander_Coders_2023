@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/models/task.model';
 
 @Component({
@@ -13,37 +6,25 @@ import { Task } from 'src/models/task.model';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss'],
 })
-export class TaskListComponent implements OnInit {
-  isVisible = true;
-
+export class TaskListComponent {
   @Input() tasks: Task[] = [];
-  @Output() handleTask = new EventEmitter();
+  @Output() handleTask = new EventEmitter<Task>();
 
-  tasksFiltradas: Task[] = [];
-
-  ngOnInit() {
-    this.tasksFiltradas = this.tasks;
-  }
-
-  mostrarLista() {
-    this.isVisible = !this.isVisible;
-  }
+  statuses: string[] = ['trabalhando', 'finalizado', 'toDo'];
 
   selectedTask(task: Task) {
     this.handleTask.emit(task);
   }
 
-  handleFiltro(filtro: string) {
-    if (filtro === 'all') {
-      this.tasksFiltradas = this.tasks;
-      return;
-    }
+  // Function to transform status names
+  transformStatus(status: string): string {
+    return (
+      status.charAt(0).toUpperCase() +
+      status.slice(1).replace(/([A-Z])/g, ' $1')
+    );
+  }
 
-    this.tasksFiltradas = this.tasks.filter((item) => {
-      if (item.status === filtro) {
-        return item;
-      }
-      return;
-    });
+  getTasksByStatus(status: string): Task[] {
+    return this.tasks.filter((task) => task.status === status);
   }
 }

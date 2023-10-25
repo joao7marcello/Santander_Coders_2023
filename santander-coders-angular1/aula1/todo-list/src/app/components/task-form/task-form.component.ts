@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from 'src/models/task.model';
 
 @Component({
@@ -7,12 +8,25 @@ import { Task } from 'src/models/task.model';
   styleUrls: ['./task-form.component.scss'],
 })
 export class TaskFormComponent {
-  @Output() addTask = new EventEmitter();
+  @Output() addTask = new EventEmitter<Task>();
 
-  public newTask = new Task();
+  taskForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.taskForm = this.formBuilder.group({
+      title: ['', [Validators.required, Validators.minLength(3)]],
+      description: ['', [Validators.required, Validators.minLength(3)]],
+      date: ['', Validators.required],
+      status: ['toDo'],
+    });
+  }
 
   submitTask() {
-    this.addTask.emit(this.newTask);
-    this.newTask = new Task();
+    if (this.taskForm.valid) {
+      const newTask: Task = this.taskForm.value;
+      this.addTask.emit(newTask);
+      this.taskForm.reset();
+      this.taskForm.patchValue({ status: 'toDo' });
+    }
   }
 }
