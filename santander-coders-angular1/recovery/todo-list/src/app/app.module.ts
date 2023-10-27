@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateGreaterThanTodayDirective } from './directives/date-greater-than-today.directive';
 import { TaskFiltroComponent } from './components/task-filtro/task-filtro.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -28,9 +27,8 @@ import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    [ModalModule.forRoot],
   ],
-  providers: [BsModalService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
