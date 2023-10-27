@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appDateGreaterThanToday]',
@@ -6,14 +6,14 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class DateGreaterThanTodayDirective {
   @Input() Date!: Date;
 
-  constructor(private element: ElementRef) {}
+  constructor(private element: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
     const dateFormat = new Date(this.Date);
     const today = new Date();
 
     if (today > dateFormat) {
-      this.element.nativeElement.style.color = 'red';
+      this.renderer.setStyle(this.element.nativeElement, 'color', 'red');
     }
   }
 }

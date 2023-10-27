@@ -177,7 +177,6 @@ export class AppComponent {
       title: 'title28',
     },
   ];
-  // listTask: Array<IListTask> = [];
   selectedTask: Task | null = null;
 
   ngOnInit() {
@@ -185,7 +184,7 @@ export class AppComponent {
   }
 
   onAddTask(task: Task) {
-    this.listTask.push(task);
+    this.listTask.push(task); // Use "listTask" here
   }
 
   handleTask(task: Task) {
@@ -194,5 +193,11 @@ export class AppComponent {
 
   fecharDetalhes() {
     this.selectedTask = null;
+  }
+
+  editTask(task: Task) {
+    // Handle edit operation for the selected task
+    // You can open a dialog, a form, or a new component for editing the task details.
+    console.log('Editing task:', task);
   }
 }

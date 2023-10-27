@@ -9,6 +9,7 @@ import { Task } from 'src/models/task.model';
 export class TaskListComponent {
   @Input() tasks: Task[] = [];
   @Output() handleTask = new EventEmitter<Task>();
+  @Output() editTaskEvent = new EventEmitter<Task>(); // Define a new EventEmitter for edit events
 
   statuses: string[] = ['trabalhando', 'finalizado', 'toDo'];
 
@@ -26,5 +27,9 @@ export class TaskListComponent {
 
   getTasksByStatus(status: string): Task[] {
     return this.tasks.filter((task) => task.status === status);
+  }
+
+  editTask(task: Task) {
+    this.editTaskEvent.emit(task); // Emit the edit event when the button is clicked
   }
 }
